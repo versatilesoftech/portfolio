@@ -1,0 +1,50 @@
+.card-container {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(20px);
+  background: rgba(22, 21, 21, 0.75);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensures that content is clipped to the card */
+  padding: 2rem;
+  width: 100%;
+  height: 350px;
+}
+
+.mesh-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 65%;
+  height: 65%;
+  /* background: radial-gradient(circle, rgba(255, 110, 196, 0.5), rgba(120, 115, 245, 0.5), rgba(4, 167, 254, 0.5)); */
+  background: radial-gradient(circle, #4169e1ff, #354c92, #000);
+
+  /* background: radial-gradient(#4169e1ff, #ffffffff, #000000ff); */
+  /* linear-gradient(0deg, #4169e1ff, #ffffffff, #000000ff); */
+
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  filter: blur(50px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+}
+
+
+.title,
+.content {
+  position: relative;
+  z-index: 2;
+  color: white;
+}

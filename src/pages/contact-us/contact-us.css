@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque&family=Syne&display=swap');
+
+.bg_black {
+  background-color: #101010 !important;
+}
+.input-control-box {
+  width: 100%; /* Full width within the parent container */
+  height: 50px;
+  /* margin-top: 40px; */
+}
+.input-control {
+  background-color: #101010;
+  border: 1px solid #fff;
+  transition: all 0.5s ease-in-out;
+  width: 100%; /* Full width within the parent container */
+  height: 50px;
+  padding-inline: 10px;
+  box-sizing: border-box;
+}
+.input-control::placeholder {
+  color: #d6d6d6e2 !important;
+}
+.input-control:focus {
+  outline: none;
+  /* border: #83a2fe; */
+  /* outline-color: #4169e1; */
+  box-shadow: 0 0 5px #4169e1, 0 0 25px #4169e1;
+}
+.select-control-box {
+  /* margin-top: 30px; */
+  width: 100%; /* Take full width of the parent container */
+  height: 50px;
+  /* Width control is handled by the inline styles */
+}
+
+.select-control {
+  background-color: #101010;
+  color: #fff;
+  border: 1px solid #fff;
+  transition: all 0.5s ease-in-out;
+  width: 100%;
+  height: 50px;
+  padding-inline: 10px;
+  box-sizing: border-box;
+  appearance: none; /* Remove default arrow */
+  background-image: linear-gradient(45deg, transparent 50%, #4169e1 50%),
+    linear-gradient(135deg, #4169e1 50%, transparent 50%);
+  background-position: calc(100% - 15px) calc(100% - 20px),
+    calc(100% - 10px) calc(100% - 20px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+}
+
+.select-control:focus {
+  outline: none;
+  box-shadow: 0 0 5px #4169e1, 0 0 25px #4169e1;
+}
+
+.select-control option {
+  background-color: #f3f3f3;
+  color: #101010;
+  font-weight: 600;
+  padding: 10px;
+}
+
+/* Optional: Style the dropdown arrow */
+.select-control::after {
+  content: "▼";
+  color: #9ab3ff;
+  position: absolute;
+  right: 10px;
+  top: 18px;
+  pointer-events: none;
+}
+.custom-date-picker {
+  /* margin-top: 30px; */
+  width: 100%; /* Take full width of the parent container */
+  height: 50px;
+}
+.custom-date-picker .react-datepicker-wrapper {
+  width: 100%;
+}
+
+.custom-date-picker .react-datepicker__input-container input {
+  background-color: #101010;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.custom-date-picker .react-datepicker__header {
+  background-color: #4672f6;
+  border-bottom: 1px solid #fff;
+}
+
+.custom-date-picker .react-datepicker__day--selected,
+.custom-date-picker .react-datepicker__day--keyboard-selected {
+  background-color: #4169e1;
+  color: #fff;
+}
+
+.custom-date-picker .react-datepicker__day--today {
+  font-weight: bold;
+}
+
+/* CSS */
+.button-55 {
+  background-color: #101010;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 12px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #f3f3f3;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: 0.55rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  user-select: none;
+  border-color: #f3f3f3;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-55:hover {
+  /* box-shadow: rgba(72, 84, 255, 0.609) 2px 8px 8px -5px; */
+  transform: translate3d(0, 2px, 0);
+  box-shadow: 0 0 5px #4169e1, 0 0 25px #4169e1;
+}
+
+.button-55:focus {
+  box-shadow: rgba(251, 250, 250, 0.3) 2px 8px 4px -6px;
+}
+
+.syne-text {
+  font-family: "Syne", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.darker-grotesque-text {
+  font-family: "Darker Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@media only screen and (max-width: 600px) {
+  .input-control{
+    width: 90%;   
+  }
+  .select-control-box{
+    width: 90%;   
+    
+  }
+}

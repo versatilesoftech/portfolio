@@ -1,0 +1,221 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: TTF;
+  src: url("./assets/fonts/TTCPro-ed9ac02e.woff2");
+}
+
+* {
+  font-family: TTF;
+}
+
+body {
+  background-color: #111;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+.container {
+  background-color: #111;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.loading-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to bottom right, #000, #050505, #111);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  color: #191654;
+}
+
+#svg {
+  height: 150px;
+  width: 150px;
+  stroke: white;
+  fill-opacity: 0;
+  stroke-width: 3px;
+  stroke-dasharray: 4500;
+  animation: draw 6s ease-in-out;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 4500;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.name-container {
+  height: 30px;
+  overflow: hidden;
+}
+
+.logo-name {
+  color: #fff;
+  font-size: 20px;
+  letter-spacing: 12px;
+  text-transform: uppercase;
+  margin-left: 20px;
+  font-weight: bolder;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: TTF;
+  src: url("./assets/fonts/TTCPro-ed9ac02e.woff2");
+}
+
+@font-face {
+  font-family: juana;
+  src: url("./assets/fonts/Fontspring-DEMO-juana-extralightit_toKzXEsfr.ttf");
+}
+
+.syne {
+  font-family: "Syne", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  font-family: TTF;
+}
+
+body {
+  background-color: #101010;
+  overflow-x: hidden;
+}
+
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scrollRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.animate-scrollLeft {
+  animation: scrollLeft 20s linear infinite;
+}
+
+.animate-scrollRight {
+  animation: scrollRight 20s linear infinite;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+.container {
+  background-color: #111;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.loading-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to bottom right, #000, #050505, #111);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  color: #191654;
+}
+
+#svg {
+  height: 150px;
+  width: 150px;
+  stroke: white;
+  fill-opacity: 0;
+  stroke-width: 3px;
+  stroke-dasharray: 4500;
+  animation: draw 3s ease-in-out;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 4500;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.name-container {
+  height: 30px;
+  overflow: hidden;
+}
+
+.logo-name {
+  color: #fff;
+  /* font-size: 20px; */
+  letter-spacing: 12px;
+  text-transform: uppercase;
+  margin-left: 20px;
+  font-weight: bolder;
+}
+
+.juana-text{
+  font-family: juana;
+}
+
+#scrollText{
+  font-family: juana;
+
+}
+
+html {
+  scroll-behavior: smooth;
+}

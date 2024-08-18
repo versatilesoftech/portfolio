@@ -1,0 +1,9 @@
+# Remaining Points:
+
+- Responsive Test
+
+- Thumbnail of Projects  
+
+- form vallidation
+
+- google sheet submit

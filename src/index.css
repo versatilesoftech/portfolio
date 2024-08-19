@@ -102,6 +102,11 @@ body {
   src: url("./assets/fonts/Fontspring-DEMO-juana-extralightit_toKzXEsfr.ttf");
 }
 
+@font-face {
+  font-family: Agrandir;
+  src: url("./assets/fonts/Agrandir-Regular.otf");
+}
+
 .syne {
   font-family: "Syne", sans-serif;
   font-optical-sizing: auto;
@@ -110,11 +115,13 @@ body {
 }
 
 * {
-  font-family: TTF;
+  font-family: Agrandir;
+  letter-spacing: 2px;
+
 }
 
 body {
-  background-color: #101010;
+  background-color: #111;
   overflow-x: hidden;
 }
 

@@ -14,7 +14,7 @@ const ScrollText = (props) => {
 
         gsap.to('.text h3', {
             transform: 'translateX(-150%)',
-            duration: 40,
+            duration: 30,
             ease: 'none',
             repeat: -1,
         });

@@ -72,7 +72,7 @@ export function TypewriterEffectSmoothDemo() {
     if (counter < words.length) {
       const timer = setInterval(() => {
         setCounter((prevCounter) => prevCounter + 1);
-      }, 5000);
+      }, 6000);
 
       return () => clearInterval(timer);
     } else {

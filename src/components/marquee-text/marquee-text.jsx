@@ -26,6 +26,7 @@ const ScrollText = (props) => {
             <div className="text">
                 <h3 className='text-[1.5rem] md:text-[2.3rem] lg:text-[4rem]'>{props?.text || "Beyond tech, beyond limits ● key to unlocking your business potential ● Where your tech journey ends ●"}</h3>
                 <h3 className='text-[1.5rem] md:text-[2.3rem] lg:text-[4rem]'>{props?.text || "Beyond tech, beyond limits ● key to unlocking your business potential ● Where your tech journey ends ●"}</h3>
+                <h3 className='text-[1.5rem] md:text-[2.3rem] lg:text-[4rem]'>{props?.text || "Beyond tech, beyond limits ● key to unlocking your business potential ● Where your tech journey ends ●"}</h3>
                 {/* <h3 className='text-[1.5rem] md:text-[2.3rem] lg:text-[4rem]'>{props?.text || "key to unlocking your business potential"}</h3> */}
                 {/* <h3 className='text-[1.5rem] md:text-[2.3rem] lg:text-[4rem]'>{props?.text || "Where your tech journey ends."}</h3> */}
                 {/* <h3 className='text-[1.5rem] md:text-[2.3rem] lg:text-[4rem]'>{props?.text || ""}</h3>

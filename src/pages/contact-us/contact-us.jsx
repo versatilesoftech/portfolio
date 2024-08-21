@@ -202,6 +202,7 @@ import { useForm } from "react-hook-form";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import axios from "axios";
+import ToastNotification from "../../components/toaster/toaster";
 
 const generateTimeSlots = () => {
     const slots = [];
@@ -219,6 +220,7 @@ const generateTimeSlots = () => {
 
 export default function Contact() {
     const [startDate, setStartDate] = useState(null);
+    const [toastMessage, setToastMessage] = useState(null);
 
     const {
         register,
@@ -239,15 +241,16 @@ export default function Contact() {
     });
 
     const onSubmit = async (data) => {
-
         const url = 'https://script.google.com/macros/s/AKfycbwNsZu_azOnY7zHiyewI8BmkkNb8naXbwfpe4BF8Jq-w6MmBXsXt23QkdSUbySD4-JzWw/exec';
 
-        axios.post(url, null, { params: data }).then((res) => {
-            console.log(res)
-        }).catch((e) => {
-            console.error(e)
-        })
-    }
+        try {
+            await axios.post(url, null, { params: data });
+            setToastMessage('Form submitted successfully!');
+            setTimeout(() => setToastMessage(null), 3000);
+        } catch (error) {
+            console.error(error);
+        }
+    };
 
     const isNotSunday = (date) => date.getDay() !== 0;
 
@@ -311,6 +314,10 @@ export default function Contact() {
 
     return (
         <section className=" bg_black text-white bg-current">
+            <ToastNotification
+                message={toastMessage}
+                onClose={() => setToastMessage(null)}
+            />
             <div className="flex-col flex items-center justify-center">
                 {deviceType === "Mobile" ? <p className="text-[36px] text-center tracking-wide sm:text-[36px] md:text-xl lg:text-6xl uppercase font-semibold text-blue-500">
                     Discovery Call

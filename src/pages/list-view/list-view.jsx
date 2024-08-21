@@ -22,6 +22,12 @@ import Illustrator from "../../assets/svgs/Illustrator";
 import Photoshop from "../../assets/svgs/photoshop";
 import Premier from "../../assets/svgs/premier";
 import AfterEffects from "../../assets/svgs/after-effects";
+import Docker from "../../assets/svgs/docker";
+import Aws from "../../assets/svgs/aws";
+import Azure from "../../assets/svgs/azure";
+import Kubernetes from "../../assets/svgs/kubernetes";
+import Github from "../../assets/svgs/github";
+import Gitlab from "../../assets/svgs/gitlab";
 
 const icons1 = [
   { Component: HTMLIcon, alt: "HTML" },
@@ -35,7 +41,9 @@ const icons1 = [
   { Component: Photoshop, alt: "Photoshop" },
   { Component: Illustrator, alt: "Illustrator" },
   { Component: Premier, alt: "Premier" },
-  { Component: AfterEffects, alt: "AfterEffects" }
+  { Component: AfterEffects, alt: "AfterEffects" },
+  { Component: Kubernetes, alt: "Kubernetes" },
+  { Component: Github, alt: "Github" },
 
 ];
 
@@ -50,6 +58,10 @@ const icons2 = [
   { Component: MySql, alt: "MySql" },
   { Component: Mongo, alt: "MongoDB" },
   { Component: PostgreSQL, alt: "PostgreSQL"},
+  { Component: Docker, alt: "Docker"},
+  { Component: Aws, alt: "Aws"},
+  { Component: Azure, alt: "Azure"},
+  { Component: Gitlab, alt: "Gitlab"},
 ];
 
 function List_View() {

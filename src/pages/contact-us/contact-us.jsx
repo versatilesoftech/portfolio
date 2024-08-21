@@ -241,7 +241,7 @@ export default function Contact() {
     });
 
     const onSubmit = async (data) => {
-        const url = 'https://script.google.com/macros/s/AKfycbwNsZu_azOnY7zHiyewI8BmkkNb8naXbwfpe4BF8Jq-w6MmBXsXt23QkdSUbySD4-JzWw/exec';
+        const url = 'https://script.google.com/macros/s/AKfycbwsxEkj8EhLiVUNGQg48dNGpeK9cL_3Wu5MLudXphIZrGOLGsfHGl2dtg_lg1yxmolHkA/exec';
 
         try {
             await axios.post(url, null, { params: data });

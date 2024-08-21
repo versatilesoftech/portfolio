@@ -51,10 +51,10 @@ const Card = (props) => {
         <div className="title text-lg md:text-xl lg:text-2xl font-extrabold">
           {props.icon}
         </div>
-        <div className="title mt-3 text-2xl md:text-3xl lg:text-3xl font-extrabold">
+        <div className="title mt-3 text-2xl md:text-xl lg:text-2xl font-extrabold">
           <p>{props?.title || ""}</p>
         </div>
-        <div className="content mt-2 text-lg md:text-md lg:text-md text-gray-300">
+        <div className="content mt-2 text-sm md:text-sm lg:text-sm text-gray-300">
           <p>{props?.description || ""}</p>
         </div>
       </div>

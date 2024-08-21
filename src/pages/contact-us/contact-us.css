@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque&family=Syne&display=swap');
 
 .bg_black {
-  background-color: #101010 !important;
+  background-color: #111 !important;
 }
 .input-control-box {
   width: 100%; /* Full width within the parent container */
@@ -9,7 +9,7 @@
   /* margin-top: 40px; */
 }
 .input-control {
-  background-color: #101010;
+  background-color: #111;
   border: 1px solid #fff;
   transition: all 0.5s ease-in-out;
   width: 100%; /* Full width within the parent container */
@@ -34,7 +34,7 @@
 }
 
 .select-control {
-  background-color: #101010;
+  background-color: #111;
   color: #fff;
   border: 1px solid #fff;
   transition: all 0.5s ease-in-out;
@@ -58,7 +58,7 @@
 
 .select-control option {
   background-color: #f3f3f3;
-  color: #101010;
+  color: #111;
   font-weight: 600;
   padding: 10px;
 }
@@ -82,7 +82,7 @@
 }
 
 .custom-date-picker .react-datepicker__input-container input {
-  background-color: #101010;
+  background-color: #111;
   border: 1px solid #fff;
   color: #fff;
   padding: 10px;
@@ -106,7 +106,7 @@
 
 /* CSS */
 .button-55 {
-  background-color: #101010;
+  background-color: #111;
   background-image: none;
   background-position: 0 90%;
   background-repeat: repeat no-repeat;

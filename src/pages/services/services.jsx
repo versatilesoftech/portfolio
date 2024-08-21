@@ -21,7 +21,7 @@ const Services = () => {
                             <p className="text-5xl md:text-5xl lg:text-6xl uppercase font-bold text-white">
                                 EXPERTISE
                             </p>
-                            <p className='mt-2 lg:mt-7 text-center  w-[65vw] leading-10 text-gray-400 sm:text-lg md:text-lg lg:text-[26px] capitalize font-bold'>Your business, our expertise.</p>
+                            <p className='mt-4 lg:mt-7 text-center text-gray-400 sm:text-base md:text-lg lg:text-[26px] capitalize font-bold'>Your business, our expertise.</p>
                         </div>
                         <div className='grid lg:grid-cols-4 grid-cols-1 md:grid-cols-2'>
                             {/* Web Development */}

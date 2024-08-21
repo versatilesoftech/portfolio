@@ -5,7 +5,7 @@ module.exports = {
       colors: {
         primary: "#1e40a6",
         white: "#fefefe",
-        black: "#000",
+        black: "#111",
       },
       animation: {
         scrollLeft: "scrollLeft 30s linear infinite",

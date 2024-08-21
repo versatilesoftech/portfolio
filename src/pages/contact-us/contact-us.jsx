@@ -193,7 +193,7 @@
 //     );
 // }
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import InputField from "../../components/input/inputfield";
 import SelectBox from "../../components/input/selectbox";
 import CustomDatePicker from "../../components/input/customdatepicker";
@@ -202,6 +202,7 @@ import { useForm } from "react-hook-form";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import axios from "axios";
+import ToastNotification from "../../components/toaster/toaster";
 
 const generateTimeSlots = () => {
     const slots = [];
@@ -219,12 +220,14 @@ const generateTimeSlots = () => {
 
 export default function Contact() {
     const [startDate, setStartDate] = useState(null);
+    const [toastMessage, setToastMessage] = useState(null);
 
     const {
         register,
         handleSubmit,
         setValue,
         watch,
+        reset,
         formState: { errors },
     } = useForm({
         defaultValues: {
@@ -239,15 +242,17 @@ export default function Contact() {
     });
 
     const onSubmit = async (data) => {
+        const url = 'https://script.google.com/macros/s/AKfycbwsxEkj8EhLiVUNGQg48dNGpeK9cL_3Wu5MLudXphIZrGOLGsfHGl2dtg_lg1yxmolHkA/exec';
 
-        const url = 'https://script.google.com/macros/s/AKfycbwNsZu_azOnY7zHiyewI8BmkkNb8naXbwfpe4BF8Jq-w6MmBXsXt23QkdSUbySD4-JzWw/exec';
-
-        axios.post(url, null, { params: data }).then((res)=>{
-            console.log(res)
-        }).catch((e)=>{
-            console.error(e)
-        })
-    }
+        try {
+            await axios.post(url, null, { params: data });
+            setToastMessage('Form submitted successfully!');
+            reset()
+            setTimeout(() => setToastMessage(null), 3000);
+        } catch (error) {
+            console.error(error);
+        }
+    };
 
     const isNotSunday = (date) => date.getDay() !== 0;
 
@@ -266,12 +271,62 @@ export default function Contact() {
 
     // GSAP animation can be added back as needed
 
+    const [deviceType, setDeviceType] = useState("Desktop");
+
+    useEffect(() => {
+        const handleResize = () => {
+            const width = window.innerWidth;
+            if (width < 768) {
+                setDeviceType("Mobile");
+            } else if (width >= 768 && width <= 1024) {
+                setDeviceType("Tablet");
+            } else {
+                setDeviceType("Desktop");
+            }
+        };
+
+        handleResize();
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
+
+    useGSAP(() => {
+        if (deviceType !== "Mobile") {
+            gsap.from(TextRef.current, {
+                x: 200,
+                duration: 5,
+                ease: "power1.in",
+                scrollTrigger: {
+                    scroller: "body",
+                    trigger: TextRef.current,
+                    // markers: true,
+                    start: "top 80%",
+                    end: "top 30%",
+                    scrub: 4
+                }
+            })
+        }
+    })
+
+
+
     return (
         <section className=" bg_black text-white bg-current">
+            <ToastNotification
+                message={toastMessage}
+                onClose={() => setToastMessage(null)}
+            />
             <div className="flex-col flex items-center justify-center">
-                <p className="text-[38px] tracking-wide sm:text-[38px] md:text-xl lg:text-6xl uppercase font-semibold text-white">
+                {deviceType === "Mobile" ? <p className="text-[36px] text-center tracking-wide sm:text-[36px] md:text-xl lg:text-6xl uppercase font-semibold text-blue-500">
                     Discovery Call
-                </p>
+                </p> : <span ref={TextRef} className="text-[3rem] sm:text-[3rem] md:text-[5rem] lg:text-[10rem] text-center tracking-wider font-bold text-blue-500 opacity-90">
+                    Discovery Call
+                </span>}
+
                 <p className='mt-2 lg:mt-7 text-center  w-[80vw] md:w-[65vw] md:leading-10 text-gray-400 sm:text-lg md:text-lg lg:text-[26px] capitalize font-bold'>
                     Every dream can come true if you make the right decision. Making this call today is the decision that will take your business to new heights tomorrow.
                 </p>

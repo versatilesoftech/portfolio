@@ -70,7 +70,7 @@ export const WavyBackground = ({
     nt += getSpeed();
     for (i = 0; i < n; i++) {
       ctx.beginPath();
-      ctx.lineWidth = waveWidth || 60;
+      ctx.lineWidth = waveWidth || 50;
       ctx.strokeStyle = waveColors[i % waveColors.length];
       for (x = 0; x < w; x += 5) {
         var y = noise(x / 800, 0.3 * i, nt) * 100;
@@ -110,19 +110,19 @@ export const WavyBackground = ({
   return (
     <div
       className={cn(
-        "flex items-center justify-center",
+        "flex items-center justify-center ",
         containerClassName
       )}
     >
       <canvas
-        className="absolute inset-0 -z-50"
+        className="absolute h-screen w-screen   inset-0 -z-50"
         ref={canvasRef}
         id="canvas"
         style={{
           ...(isSafari ? { filter: `blur(${blur}px)` } : {}),
         }}
       ></canvas>
-      <div className={cn("relative -z-50", className)} {...props}>
+      <div className={cn("relative cn -z-50", className)} {...props}>
         {children}
       </div>
     </div>

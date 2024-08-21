@@ -227,6 +227,7 @@ export default function Contact() {
         handleSubmit,
         setValue,
         watch,
+        reset,
         formState: { errors },
     } = useForm({
         defaultValues: {
@@ -246,6 +247,7 @@ export default function Contact() {
         try {
             await axios.post(url, null, { params: data });
             setToastMessage('Form submitted successfully!');
+            reset()
             setTimeout(() => setToastMessage(null), 3000);
         } catch (error) {
             console.error(error);

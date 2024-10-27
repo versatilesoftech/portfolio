@@ -330,13 +330,13 @@ export default function Contact() {
 
                     <span data-aos="slide-left"
                         data-aos-offset="-200"
-                        data-aos-duration="1000"
+                        data-aos-duration="2000"
                         data-aos-easing="ease"
                         data-aos-anchor-placement="center-center" className="text-[3rem] sm:text-[3rem] md:text-[5rem] lg:text-[10rem] text-center tracking-wider font-bold text-blue-500 opacity-90">
                         Discovery Call
                     </span>
 
-                    <p className='mt-3 lg:mt-7 text-center  w-[80vw] md:w-[65vw] md:leading-10 text-gray-400 sm:text-lg md:text-lg lg:text-[26px] capitalize font-bold' data-aos-delay="50" data-aos="slide-up">
+                    <p className='mt-2 lg:mt-7 text-center  w-[80vw] md:w-[65vw] md:leading-10 text-gray-400 sm:text-lg md:text-lg lg:text-[26px] capitalize font-bold' data-aos-delay="500"  data-aos="zoom-out">
                         Every dream can come true if you make the right decision. Making this call today is the decision that will take your business to new heights tomorrow.
                     </p>
                 </div>
@@ -417,7 +417,7 @@ export default function Contact() {
                     </button>
                 </div> */}
                 {/* </form> */}
-            <InlineWidget url="https://calendly.com/login-versatilesoftech/30min/" styles={{height:"100vh"}} />
+                <InlineWidget url="https://calendly.com/login-versatilesoftech/30min/" styles={{height:"100vh", marginTop: "1.2rem"}} />
             </section>
     );
 }

@@ -336,7 +336,7 @@ export default function Contact() {
                         Discovery Call
                     </span>
 
-                    <p className='mt-2 lg:mt-7 text-center  w-[80vw] md:w-[65vw] md:leading-10 text-gray-400 sm:text-lg md:text-lg lg:text-[26px] capitalize font-bold' data-aos-delay="50" data-aos="slide-up">
+                    <p className='mt-3 lg:mt-7 text-center  w-[80vw] md:w-[65vw] md:leading-10 text-gray-400 sm:text-lg md:text-lg lg:text-[26px] capitalize font-bold' data-aos-delay="50" data-aos="slide-up">
                         Every dream can come true if you make the right decision. Making this call today is the decision that will take your business to new heights tomorrow.
                     </p>
                 </div>

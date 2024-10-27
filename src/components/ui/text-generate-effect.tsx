@@ -51,7 +51,7 @@ export const TextGenerateEffect = ({
   };
 
   return (
-    <div className={cn("font-bold", className)}>
+    <div className={cn("font-bold", className)} data-aos="zoom-out-down">
       <div className="mt-4">
         <div className="dark:text-white flex justify-center items-center text-white lg:text-2xl text-base leading-snug tracking-wide">
           {renderWords()}

@@ -203,136 +203,145 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import axios from "axios";
 import ToastNotification from "../../components/toaster/toaster";
+import { InlineWidget } from "react-calendly";
 
-const generateTimeSlots = () => {
-    const slots = [];
-    for (let hour = 0; hour < 24; hour++) {
-        for (let minute = 0; minute < 60; minute += 15) {
-            const time = `${String(hour).padStart(2, "0")}:${String(minute).padStart(
-                2,
-                "0"
-            )}`;
-            slots.push({ label: time, value: time });
-        }
-    }
-    return slots;
-};
+// const generateTimeSlots = () => {
+//     const slots = [];
+//     for (let hour = 0; hour < 24; hour++) {
+//         for (let minute = 0; minute < 60; minute += 15) {
+//             const time = `${String(hour).padStart(2, "0")}:${String(minute).padStart(
+//                 2,
+//                 "0"
+//             )}`;
+//             slots.push({ label: time, value: time });
+//         }
+//     }
+//     return slots;
+// };
 
 export default function Contact() {
-    const [startDate, setStartDate] = useState(null);
-    const [toastMessage, setToastMessage] = useState(null);
+    // const [startDate, setStartDate] = useState(null);
+    // const [toastMessage, setToastMessage] = useState(null);
 
-    const {
-        register,
-        handleSubmit,
-        setValue,
-        watch,
-        reset,
-        formState: { errors },
-    } = useForm({
-        defaultValues: {
-            name: "",
-            email: "",
-            phone: "",
-            services: "",
-            meetingDate: "",
-            timeslot: "00:00",
-            timestamp: new Date()
-        }
-    });
+    // const {
+    //     register,
+    //     handleSubmit,
+    //     setValue,
+    //     watch,
+    //     reset,
+    //     formState: { errors },
+    // } = useForm({
+    //     defaultValues: {
+    //         name: "",
+    //         email: "",
+    //         phone: "",
+    //         services: "",
+    //         meetingDate: "",
+    //         timeslot: "00:00",
+    //         timestamp: new Date()
+    //     }
+    // });
 
-    const onSubmit = async (data) => {
-        const url = 'https://script.google.com/macros/s/AKfycbwsxEkj8EhLiVUNGQg48dNGpeK9cL_3Wu5MLudXphIZrGOLGsfHGl2dtg_lg1yxmolHkA/exec';
+    // const onSubmit = async (data) => {
+    //     const url = 'https://script.google.com/macros/s/AKfycbwsxEkj8EhLiVUNGQg48dNGpeK9cL_3Wu5MLudXphIZrGOLGsfHGl2dtg_lg1yxmolHkA/exec';
 
-        try {
-            await axios.post(url, null, { params: data });
-            setToastMessage('Form submitted successfully!');
-            reset()
-            setTimeout(() => setToastMessage(null), 3000);
-        } catch (error) {
-            console.error(error);
-        }
-    };
+    //     try {
+    //         await axios.post(url, null, { params: data });
+    //         setToastMessage('Form submitted successfully!');
+    //         reset()
+    //         setTimeout(() => setToastMessage(null), 3000);
+    //     } catch (error) {
+    //         console.error(error);
+    //     }
+    // };
 
-    const isNotSunday = (date) => date.getDay() !== 0;
+    // const isNotSunday = (date) => date.getDay() !== 0;
 
-    const isFutureDate = (date) => date >= new Date();
+    // const isFutureDate = (date) => date >= new Date();
 
-    const filterDate = (date) => {
-        return isNotSunday(date) && isFutureDate(date);
-    };
+    // const filterDate = (date) => {
+    //     return isNotSunday(date) && isFutureDate(date);
+    // };
 
-    const handleDateChange = (date) => {
-        setStartDate(date);
-        setValue("meetingDate", date, { shouldValidate: true });
-    };
+    // const handleDateChange = (date) => {
+    //     setStartDate(date);
+    //     setValue("meetingDate", date, { shouldValidate: true });
+    // };
 
-    const TextRef = useRef(null);
+    // const TextRef = useRef(null);
 
-    // GSAP animation can be added back as needed
+    // // GSAP animation can be added back as needed
 
-    const [deviceType, setDeviceType] = useState("Desktop");
+    // const [deviceType, setDeviceType] = useState("Desktop");
 
-    useEffect(() => {
-        const handleResize = () => {
-            const width = window.innerWidth;
-            if (width < 768) {
-                setDeviceType("Mobile");
-            } else if (width >= 768 && width <= 1024) {
-                setDeviceType("Tablet");
-            } else {
-                setDeviceType("Desktop");
-            }
-        };
+    // useEffect(() => {
+    //     const handleResize = () => {
+    //         const width = window.innerWidth;
+    //         if (width < 768) {
+    //             setDeviceType("Mobile");
+    //         } else if (width >= 768 && width <= 1024) {
+    //             setDeviceType("Tablet");
+    //         } else {
+    //             setDeviceType("Desktop");
+    //         }
+    //     };
 
-        handleResize();
+    //     handleResize();
 
-        window.addEventListener("resize", handleResize);
+    //     window.addEventListener("resize", handleResize);
 
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, []);
+    //     return () => {
+    //         window.removeEventListener("resize", handleResize);
+    //     };
+    // }, []);
 
-    useGSAP(() => {
-        if (deviceType !== "Mobile") {
-            gsap.from(TextRef.current, {
-                x: 200,
-                duration: 5,
-                ease: "power1.in",
-                scrollTrigger: {
-                    scroller: "body",
-                    trigger: TextRef.current,
-                    // markers: true,
-                    start: "top 80%",
-                    end: "top 30%",
-                    scrub: 4
-                }
-            })
-        }
-    })
+    // useGSAP(() => {
+    //     if (deviceType !== "Mobile") {
+    //         gsap.from(TextRef.current, {
+    //             x: 200,
+    //             duration: 5,
+    //             ease: "power1.in",
+    //             scrollTrigger: {
+    //                 scroller: "body",
+    //                 trigger: TextRef.current,
+    //                 // markers: true,
+    //                 start: "top 80%",
+    //                 end: "top 30%",
+    //                 scrub: 4
+    //             }
+    //         })
+    //     }
+    // })
 
 
 
     return (
-        <section className=" bg_black text-white bg-current">
-            <ToastNotification
+            <section className=" bg_black text-white bg-current overflow-hidden">
+                {/* <ToastNotification
                 message={toastMessage}
                 onClose={() => setToastMessage(null)}
-            />
-            <div className="flex-col flex items-center justify-center">
-                {deviceType === "Mobile" ? <p className="text-[36px] text-center tracking-wide sm:text-[36px] md:text-xl lg:text-6xl uppercase font-semibold text-blue-500">
+            /> */}
+                <div className="flex-col flex items-center justify-center">
+                    {/* {deviceType === "Mobile" ? <p className="text-[36px] text-center tracking-wide sm:text-[36px] md:text-xl lg:text-6xl uppercase font-semibold text-blue-500">
                     Discovery Call
                 </p> : <span ref={TextRef} className="text-[3rem] sm:text-[3rem] md:text-[5rem] lg:text-[10rem] text-center tracking-wider font-bold text-blue-500 opacity-90">
                     Discovery Call
-                </span>}
+                </span>} */}
 
-                <p className='mt-2 lg:mt-7 text-center  w-[80vw] md:w-[65vw] md:leading-10 text-gray-400 sm:text-lg md:text-lg lg:text-[26px] capitalize font-bold'>
-                    Every dream can come true if you make the right decision. Making this call today is the decision that will take your business to new heights tomorrow.
-                </p>
-            </div>
-            <form onSubmit={handleSubmit(onSubmit)} className="text-center px-4 py-5">
-                <div className="flex sm:flex-row flex-col mx-auto text-center justify-center">
+                    <span data-aos="slide-left"
+                        data-aos-offset="-200"
+                        data-aos-duration="2000"
+                        data-aos-easing="ease"
+                        data-aos-anchor-placement="center-center" className="text-[3rem] sm:text-[3rem] md:text-[5rem] lg:text-[10rem] text-center tracking-wider font-bold text-blue-500 opacity-90">
+                        Discovery Call
+                    </span>
+
+                    <p className='mt-2 lg:mt-7 text-center  w-[80vw] md:w-[65vw] md:leading-10 text-gray-400 sm:text-lg md:text-lg lg:text-[26px] capitalize font-bold' data-aos-delay="500"  data-aos="zoom-out">
+                        Every dream can come true if you make the right decision. Making this call today is the decision that will take your business to new heights tomorrow.
+                    </p>
+                </div>
+                {/* <form onSubmit={handleSubmit(onSubmit)} className="text-center px-4 py-5"> */}
+                {/* <div className="flex sm:flex-row flex-col mx-auto text-center justify-center">
                     <InputField
                         label="What’s your name?"
                         placeholder="Your Name"
@@ -357,8 +366,8 @@ export default function Contact() {
                         watch={watch}
                         errors={errors.email}
                     />
-                </div>
-                <div className="flex sm:flex-row flex-col mx-auto mt-2 text-center justify-center">
+                </div> */}
+                {/* <div className="flex sm:flex-row flex-col mx-auto mt-2 text-center justify-center">
                     <InputField
                         label="What’s your phone number?"
                         placeholder="Your Phone Number"
@@ -376,8 +385,8 @@ export default function Contact() {
                         register={register("services", { required: "This field is required" })}
                         errors={errors.services}
                     />
-                </div>
-                <div className="flex sm:flex-row flex-col mx-auto text-center justify-center mt-2">
+                </div> */}
+                {/* <div className="flex sm:flex-row flex-col mx-auto text-center justify-center mt-2">
                     <CustomDatePicker
                         label="Choose Meeting Date"
                         id="meetingDate"
@@ -401,13 +410,14 @@ export default function Contact() {
                         style={{ maxWidth: "400px", minWidth: "200px" }}
                         errors={errors.timeslot}
                     />
-                </div>
-                <div className="flex justify-center mr-3 my-12">
+                </div> */}
+                {/* <div className="flex justify-center mr-3 my-12">
                     <button className="button-55" role="button" type="submit">
                         Send
                     </button>
-                </div>
-            </form>
-        </section>
+                </div> */}
+                {/* </form> */}
+                <InlineWidget url="https://calendly.com/login-versatilesoftech/30min/" styles={{height:"100vh", marginTop: "1.2rem"}} />
+            </section>
     );
 }

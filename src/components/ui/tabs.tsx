@@ -42,6 +42,8 @@ export const Tabs = ({
           "flex flex-row items-center justify-start lg:justify-center [perspective:1000px] relative overflow-auto sm:overflow-visible no-visible-scrollbar max-w-full w-full",
           containerClassName
         )}
+        data-aos="fade-in"
+        data-aos-easing="ease-in-out-cubic"
       >
         {propTabs.map((tab, idx) => (
           <button
@@ -61,13 +63,13 @@ export const Tabs = ({
                 layoutId="clickedbutton"
                 transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
                 className={cn(
-                  "absolute inset-0 bg-gray-200 dark:bg-zinc-800 rounded-full ",
+                  "absolute inset-0  bg-blue-500 rounded-full ",
                   activeTabClassName
                 )}
               />
             )}
 
-            <span className="relative block text-black dark:text-white">
+            <span className="relative block text-white">
               {tab.title}
             </span>
           </button>
@@ -85,40 +87,39 @@ export const Tabs = ({
 };
 
 export const FadeInDiv = ({
-    className,
-    tabs,
-    hovering,
+  className,
+  tabs,
+  hovering,
 }: {
-    className?: string;
-    key?: string;
-    tabs: Tab[];
-    active: Tab;
-    hovering?: boolean;
+  className?: string;
+  key?: string;
+  tabs: Tab[];
+  active: Tab;
+  hovering?: boolean;
 }) => {
-    const isActive = (tab: Tab) => {
-        return tab.value === tabs[0].value;
-    };
-    return (
-        <div className="relative w-full h-full p-5 mt-5">
-            {tabs.map((tab, idx) => (
-                <motion.div
-                    key={tab.value}
-                    layoutId={tab.value}
-                    style={{
-                        scale: 1 - idx * 0.1,
-                        top: hovering ? idx * -50 : 0,
-                        zIndex: -idx,
-                        opacity: idx < 1 ? 1 - idx * 0.1 : 0,
-                    }}
-                    animate={{
-                        y: isActive(tab) ? [0, 40, 0] : 0,
-                    }}
-                    className={cn("w-full h-full absolute top-0 left-0", `mt-${idx}`)}
-                >
-                    {tab.content}
-                </motion.div>
-            ))}
-        </div>
-    );
+  const isActive = (tab: Tab) => {
+    return tab.value === tabs[0].value;
+  };
+  return (
+    <div className="relative w-full h-full p-5 mt-5">
+      {tabs.map((tab, idx) => (
+        <motion.div
+          key={tab.value}
+          layoutId={tab.value}
+          style={{
+            scale: 1 - idx * 0.1,
+            top: hovering ? idx * -50 : 0,
+            zIndex: -idx,
+            opacity: idx < 1 ? 1 - idx * 0.1 : 0,
+          }}
+          animate={{
+            y: isActive(tab) ? [0, 40, 0] : 0,
+          }}
+          className={cn("w-full h-full absolute top-0 left-0", `mt-${idx}`)}
+        >
+          {tab.content}
+        </motion.div>
+      ))}
+    </div>
+  );
 };
-    

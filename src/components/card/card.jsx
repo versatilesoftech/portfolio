@@ -45,7 +45,7 @@ const Card = (props) => {
   }, []);
 
   return (
-    <div className="card-container p-3 text-white col-span-1 mt-3">
+    <div className="card-container p-3 text-white col-span-1 mt-3" data-aos="zoom-in">
       <div ref={cardRef} className="card rounded-lg border">
         <div ref={circleRef} className="mesh-circle"></div>
         <div className="title text-lg md:text-xl lg:text-2xl font-extrabold">

@@ -4,10 +4,12 @@ import Header from "./pages/header/header";
 import Hero from "./pages/hero/hero";
 import Loader from "./components/loader/loader";
 import { useEffect, useState } from "react";
+import Aos from "aos";
+import 'aos/dist/aos.css'; 
 
 function App() {
   const [loading, setLoading] = useState(true);
-
+  Aos.init();
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false); 

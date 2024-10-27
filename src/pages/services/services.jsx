@@ -18,10 +18,10 @@ const Services = () => {
                         <span className='text-white text-md md:text-lg lg:text-xl font-normal text-center'>Our expertise spans across the digital landscape, ensuring your business stays ahead of the curve.</span> */}
                         <div className="flex-col  flex items-center justify-center">
                             {/* <p className="text-5xl tracking-wide sm:text-6xl md:text-7xl lg:text-8xl uppercase font-semibold text-white"> */}
-                            <p className="text-5xl md:text-5xl lg:text-6xl uppercase font-bold text-white">
+                            <p className="text-5xl md:text-5xl lg:text-6xl uppercase font-bold text-white" data-aos="zoom-in">
                                 EXPERTISE
                             </p>
-                            <p className='mt-4 lg:mt-7 text-center text-gray-400 sm:text-base md:text-lg lg:text-[26px] capitalize font-bold'>Your business, our expertise.</p>
+                            <p className='mt-4 lg:mt-7 text-center text-gray-400 sm:text-base md:text-lg lg:text-[26px] capitalize font-bold' data-aos="zoom-out-up">Your business, our expertise.</p>
                         </div>
                         <div className='grid lg:grid-cols-4 grid-cols-1 md:grid-cols-2'>
                             {/* Web Development */}
